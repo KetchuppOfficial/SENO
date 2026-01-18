@@ -1,0 +1,31 @@
+[build-system]
+requires = ["uv_build >= 0.7.19"]
+build-backend = "uv_build"
+
+[project]
+name = "seno"
+version = "0.1.0"
+description = "SENO: Symbolic Execution for Neutralizing Overflow"
+authors = [
+    {name = "Alexander Dolgov", email = "dolgov.aleksandr@phystech.edu"}
+]
+readme = "README.md"
+requires-python = ">= 3.12"
+classifiers = [
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: POSIX :: Linux",
+]
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = [
+    "angr>=9.2.193",
+    "argparse>=1.4.0",
+    "uv==0.9.26",
+]
+
+[project.scripts]
+seno = "seno.main:main"
+
+[tool.black]
+line-length = 80
+skip-string-normalization = true
